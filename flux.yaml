@@ -1,0 +1,4 @@
+output:
+  skills: .claude/skills
+
+project_name: my-project
