@@ -86,15 +86,30 @@ The convoy gives you a single view of the entire wave — which beads are done, 
 
 Do NOT re-sling the same issue to a new polecat without first understanding why the original failed.
 
-## Step 5 — Merge and Close
+## Step 5 — Review and Close
 
-When a PR is green (CI passing, review approved):
+**Default: human-in-the-loop review.** When polecats complete their work, PRs are opened but NOT auto-merged. The convoy collects completed work for the human to review before anything lands on main.
+
+Present the wave status to the human:
+```bash
+gt convoy status <convoy-id>   # show which beads are done
+gh pr list --repo <repo>        # show PRs awaiting review
+```
+
+The human reviews each PR and decides when to merge. Do NOT merge PRs yourself unless the human has explicitly passed `--auto-merge` when invoking the wave, or has given explicit approval for a specific PR.
+
+**When `--auto-merge` is set:** PRs that are green (CI passing, review approved) may be merged directly:
 ```bash
 gh pr merge <number> --squash --repo <repo>
 bd close <bead-id>
 ```
 
-When ALL beads in the convoy are merged:
+**When the human merges (default):** Watch for merged PRs and close the corresponding beads:
+```bash
+bd close <bead-id>
+```
+
+When ALL beads in the convoy are closed:
 1. Close the convoy: the convoy bead (`hq-cv-*`) closes automatically when all member beads are closed, or close it manually with `bd close <convoy-id> --reason="Wave complete: all N issues merged"`
 2. Close the wave epic bead: `bd close <epic-id> --reason="Wave complete: all N issues merged"`
 3. Surface the next phase if one exists: check the parent epic for the next meso-level item
@@ -102,6 +117,7 @@ When ALL beads in the convoy are merged:
 
 ## Anti-patterns
 
+- **Do not auto-merge without explicit approval.** The default is human review. Merging without approval burns trust faster than it saves time.
 - **Do not do the coding yourself** unless the fix is trivially one-line and slinging would require waking a new polecat. Your context window is the scarcest resource.
 - **Do not batch-merge without CI**. Every PR must be green before merge.
 - **Do not decompose without the independence check**. Two polecats editing the same file = merge conflict = wasted work.
