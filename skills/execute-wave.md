@@ -49,6 +49,13 @@ bd create --title="<verb> <what>" \
   --priority=2
 ```
 
+**Create a convoy** to track the wave as a unit:
+```bash
+gt convoy create "Wave: <epic-title>" <bead-1> <bead-2> ...
+```
+
+This gives you a single convoy ID (`hq-cv-*`) that tracks all member beads. The convoy replaces manual wave tracking — no wisps, no notes on epics, no ad-hoc bead lists.
+
 ## Step 3 — Sling in Parallel
 
 Sling all independent issues to available polecats simultaneously. Do NOT wait for one to finish before slinging the next — that defeats the purpose.
@@ -57,18 +64,20 @@ Sling all independent issues to available polecats simultaneously. Do NOT wait f
 gt sling <bead-id> <rig>   # repeat for each independent issue
 ```
 
-Record the wave: note which bead IDs belong to this wave so you can track convergence. Pin a wisp or add a note to the epic bead.
+The convoy tracks membership automatically. No manual bookkeeping needed.
 
 For sequentially dependent issues: sling the blocking issue first. When it merges, sling the dependent issue immediately.
 
 ## Step 4 — Monitor Convergence
 
-Check wave state periodically:
+Use the convoy to track wave state:
 ```bash
-bd list --status=in_progress   # what's in flight
+gt convoy status <convoy-id>   # progress: X/Y completed, member status
 bd blocked                      # anything stuck
 gh pr list --repo <repo>        # PR status
 ```
+
+The convoy gives you a single view of the entire wave — which beads are done, which are in flight, and which are blocked. No need to manually cross-reference `bd list` output.
 
 **Handle escalations from inner loops:**
 - CI failure → read the failure, diagnose, decide: fix directly (if trivial) or sling a fix bead
@@ -85,10 +94,11 @@ gh pr merge <number> --squash --repo <repo>
 bd close <bead-id>
 ```
 
-When ALL beads in the wave are merged:
-1. Close the wave epic bead: `bd close <epic-id> --reason="Wave complete: all N issues merged"`
-2. Surface the next phase if one exists: check the parent epic for the next meso-level item
-3. Nudge relevant witnesses: `gt nudge <rig>/witness "Wave N complete, N PRs merged"`
+When ALL beads in the convoy are merged:
+1. Close the convoy: the convoy bead (`hq-cv-*`) closes automatically when all member beads are closed, or close it manually with `bd close <convoy-id> --reason="Wave complete: all N issues merged"`
+2. Close the wave epic bead: `bd close <epic-id> --reason="Wave complete: all N issues merged"`
+3. Surface the next phase if one exists: check the parent epic for the next meso-level item
+4. Nudge relevant witnesses: `gt nudge <rig>/witness "Wave N complete, N PRs merged"`
 
 ## Anti-patterns
 
