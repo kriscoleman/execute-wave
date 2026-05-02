@@ -1,0 +1,146 @@
+<h2>Unified Timeline — Issue Detail Page</h2>
+<p class="subtitle">GitHub comments (read-only) and Internal Notes interleaved chronologically</p>
+
+<div class="mockup">
+  <div class="mockup-header">Issue Detail — bug: API returns 500 on empty payload #42</div>
+  <div class="mockup-body" style="padding: 0; background: #0d1117;">
+
+    <!-- Issue header -->
+    <div style="padding: 16px; border-bottom: 1px solid #30363d;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="background: #238636; color: white; font-size: 11px; padding: 2px 8px; border-radius: 12px;">Open</span>
+        <span style="color: #c9d1d9; font-weight: 600; font-size: 16px;">bug: API returns 500 on empty payload</span>
+        <span style="color: #8b949e; font-size: 16px;">#42</span>
+      </div>
+      <div style="color: #8b949e; font-size: 12px; margin-top: 6px;">replicated-collab/FirstResponse &bull; opened 3d ago by @customer-jane &bull; assigned to @kris</div>
+    </div>
+
+    <!-- Issue body -->
+    <div style="padding: 16px; border-bottom: 1px solid #30363d;">
+      <div style="color: #c9d1d9; font-size: 13px; line-height: 1.5;">
+        The API endpoint <code style="background: #161b22; padding: 2px 6px; border-radius: 3px; color: #e6edf3;">/api/v1/issues</code> returns a 500 error when the request body is empty. Expected: 400 with validation message.<br><br>
+        Steps to reproduce:<br>
+        1. Send POST to /api/v1/issues with empty body<br>
+        2. Observe 500 Internal Server Error
+      </div>
+    </div>
+
+    <!-- Labels row -->
+    <div style="padding: 10px 16px; border-bottom: 1px solid #30363d; display: flex; gap: 6px; flex-wrap: wrap;">
+      <span style="background: #f85149; color: white; font-size: 11px; padding: 2px 8px; border-radius: 12px;">severity::high</span>
+      <span style="background: #3fb950; color: white; font-size: 11px; padding: 2px 8px; border-radius: 12px;">kind::bug</span>
+      <span style="background: #58a6ff; color: white; font-size: 11px; padding: 2px 8px; border-radius: 12px;">status::open</span>
+    </div>
+
+    <!-- Timeline section header -->
+    <div style="padding: 12px 16px; border-bottom: 1px solid #30363d; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #c9d1d9; font-weight: 600; font-size: 13px;">Activity</span>
+      <span style="background: #21262d; color: #8b949e; font-size: 11px; padding: 1px 8px; border-radius: 10px;">5 items</span>
+      <div style="flex: 1;"></div>
+      <span style="color: #8b949e; font-size: 11px; cursor: pointer;">Show: All</span>
+      <span style="color: #8b949e; font-size: 11px; margin: 0 4px;">|</span>
+      <span style="color: #8b949e; font-size: 11px; cursor: pointer;">GitHub only</span>
+      <span style="color: #8b949e; font-size: 11px; margin: 0 4px;">|</span>
+      <span style="color: #d97706; font-size: 11px; cursor: pointer;">Internal only</span>
+    </div>
+
+    <!-- Timeline entries -->
+    <div style="padding: 0 16px;">
+
+      <!-- GitHub comment 1 -->
+      <div style="padding: 12px 0; border-bottom: 1px solid #21262d;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+          <div style="width: 24px; height: 24px; border-radius: 50%; background: #30363d; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #8b949e;">JD</div>
+          <span style="color: #c9d1d9; font-weight: 500; font-size: 12px;">@customer-jane</span>
+          <span style="background: #21262d; color: #8b949e; font-size: 10px; padding: 1px 6px; border-radius: 4px;">GitHub</span>
+          <span style="color: #8b949e; font-size: 11px;">3d ago</span>
+        </div>
+        <div style="color: #c9d1d9; font-size: 12px; line-height: 1.5; padding-left: 32px;">
+          This is blocking our production deployment. We need this fixed ASAP. We're on the Enterprise plan and this is a critical path for our release next week.
+        </div>
+      </div>
+
+      <!-- Internal note 1 -->
+      <div style="padding: 12px 0; border-bottom: 1px solid #21262d; background: linear-gradient(90deg, #1c1917 0%, #0d1117 8px);">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+          <div style="width: 24px; height: 24px; border-radius: 50%; background: #78350f; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #fbbf24;">K</div>
+          <span style="color: #fbbf24; font-weight: 500; font-size: 12px;">@kris</span>
+          <span style="background: #78350f; color: #fbbf24; font-size: 10px; padding: 1px 6px; border-radius: 4px;">&#128274; Internal</span>
+          <span style="color: #8b949e; font-size: 11px;">2d ago</span>
+          <span style="color: #484f58; font-size: 10px; margin-left: auto; cursor: pointer;">Edit</span>
+        </div>
+        <div style="color: #c9d1d9; font-size: 12px; line-height: 1.5; padding-left: 32px;">
+          Same root cause as the Acme Corp ticket (#38). The validation middleware was removed in the last refactor. This customer is on Enterprise — high priority.
+        </div>
+      </div>
+
+      <!-- GitHub comment 2 -->
+      <div style="padding: 12px 0; border-bottom: 1px solid #21262d;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+          <div style="width: 24px; height: 24px; border-radius: 50%; background: #30363d; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #8b949e;">K</div>
+          <span style="color: #c9d1d9; font-weight: 500; font-size: 12px;">@kris</span>
+          <span style="background: #21262d; color: #8b949e; font-size: 10px; padding: 1px 6px; border-radius: 4px;">GitHub</span>
+          <span style="color: #8b949e; font-size: 11px;">2d ago</span>
+        </div>
+        <div style="color: #c9d1d9; font-size: 12px; line-height: 1.5; padding-left: 32px;">
+          Thanks for reporting this. We've identified the issue and a fix is in progress. PR incoming shortly.
+        </div>
+      </div>
+
+      <!-- Internal note 2 -->
+      <div style="padding: 12px 0; border-bottom: 1px solid #21262d; background: linear-gradient(90deg, #1c1917 0%, #0d1117 8px);">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+          <div style="width: 24px; height: 24px; border-radius: 50%; background: #78350f; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #fbbf24;">J</div>
+          <span style="color: #fbbf24; font-weight: 500; font-size: 12px;">@jenna</span>
+          <span style="background: #78350f; color: #fbbf24; font-size: 10px; padding: 1px 6px; border-radius: 4px;">&#128274; Internal</span>
+          <span style="color: #8b949e; font-size: 11px;">1d ago</span>
+          <span style="color: #8b949e; font-size: 10px; font-style: italic;">(edited)</span>
+        </div>
+        <div style="color: #c9d1d9; font-size: 12px; line-height: 1.5; padding-left: 32px;">
+          Escalated to eng team. <strong>@marc</strong> is picking up the fix. ETA: end of day tomorrow. Let's follow up with the customer once the fix is deployed.
+        </div>
+      </div>
+
+      <!-- GitHub comment 3 -->
+      <div style="padding: 12px 0; border-bottom: 1px solid #21262d;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+          <div style="width: 24px; height: 24px; border-radius: 50%; background: #30363d; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #8b949e;">M</div>
+          <span style="color: #c9d1d9; font-weight: 500; font-size: 12px;">@marc</span>
+          <span style="background: #21262d; color: #8b949e; font-size: 10px; padding: 1px 6px; border-radius: 4px;">GitHub</span>
+          <span style="color: #8b949e; font-size: 11px;">6h ago</span>
+        </div>
+        <div style="color: #c9d1d9; font-size: 12px; line-height: 1.5; padding-left: 32px;">
+          Fix deployed in v0.3.218. The validation middleware now returns 400 for empty payloads. @customer-jane can you verify on your end?
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Compose internal note -->
+    <div style="padding: 16px; border-top: 2px solid #d97706; background: #1c1917;">
+      <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+        <span style="color: #d97706; font-weight: 600; font-size: 12px;">&#128274; Add Internal Note</span>
+      </div>
+      <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 10px; min-height: 60px;">
+        <span style="color: #484f58; font-size: 12px;">Write a private note (supports GitHub-flavored markdown)...</span>
+      </div>
+      <div style="display: flex; justify-content: flex-end; margin-top: 8px; gap: 8px;">
+        <span style="color: #8b949e; font-size: 11px; padding: 6px 0;">Only visible to your team</span>
+        <div style="background: #d97706; color: #0d1117; font-size: 12px; font-weight: 600; padding: 6px 16px; border-radius: 6px; cursor: pointer;">Post Note</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="margin-top: 20px; padding: 16px; background: #161b22; border: 1px solid #30363d; border-radius: 8px;">
+  <h3 style="margin-top: 0;">Key Design Details</h3>
+  <ul style="color: #c9d1d9; font-size: 13px; line-height: 1.8;">
+    <li><strong style="color: #8b949e;">GitHub comments</strong> — neutral gray badge, read-only, fetched from API</li>
+    <li><strong style="color: #fbbf24;">Internal notes</strong> — amber badge + left border, editable by author, stored locally</li>
+    <li><strong>Filter bar</strong> — toggle between All / GitHub only / Internal only</li>
+    <li><strong>Chronological</strong> — both types interleaved by timestamp</li>
+    <li><strong>Compose area</strong> — amber-themed, always visible at bottom, markdown support</li>
+    <li><strong>"edited" indicator</strong> — shows on modified notes, expandable to see revision history</li>
+  </ul>
+</div>

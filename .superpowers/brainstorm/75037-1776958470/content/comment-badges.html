@@ -1,0 +1,132 @@
+<h2>Comment Badges — Issue List & Kanban Cards</h2>
+<p class="subtitle">Comment count indicator with unread highlight</p>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">Issue List — Comment Badges</div>
+    <div class="mockup-body" style="padding: 0; background: #0d1117;">
+
+      <!-- Issue row 1: has unread -->
+      <div style="padding: 10px 16px; border-bottom: 1px solid #21262d; display: flex; align-items: center; gap: 12px;">
+        <div style="width: 16px; height: 16px; border-radius: 50%; background: #238636; flex-shrink: 0;"></div>
+        <div style="flex: 1; min-width: 0;">
+          <div style="color: #c9d1d9; font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">bug: API returns 500 on empty payload</div>
+          <div style="color: #8b949e; font-size: 11px;">#42 &bull; FirstResponse &bull; 3d ago</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+          <div style="position: relative; display: flex; align-items: center; gap: 3px; background: #1c1917; border: 1px solid #d97706; border-radius: 12px; padding: 2px 8px; font-size: 11px;">
+            <span style="color: #fbbf24;">💬</span>
+            <span style="color: #fbbf24; font-weight: 600;">5</span>
+            <div style="position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background: #f97316; border: 2px solid #0d1117;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Issue row 2: all read -->
+      <div style="padding: 10px 16px; border-bottom: 1px solid #21262d; display: flex; align-items: center; gap: 12px;">
+        <div style="width: 16px; height: 16px; border-radius: 50%; background: #238636; flex-shrink: 0;"></div>
+        <div style="flex: 1; min-width: 0;">
+          <div style="color: #c9d1d9; font-size: 13px; font-weight: 500;">feat: add webhook retry logic</div>
+          <div style="color: #8b949e; font-size: 11px;">#41 &bull; FirstResponse &bull; 5d ago</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 3px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 2px 8px; font-size: 11px;">
+            <span style="color: #8b949e;">💬</span>
+            <span style="color: #8b949e;">3</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Issue row 3: no comments -->
+      <div style="padding: 10px 16px; border-bottom: 1px solid #21262d; display: flex; align-items: center; gap: 12px;">
+        <div style="width: 16px; height: 16px; border-radius: 50%; background: #238636; flex-shrink: 0;"></div>
+        <div style="flex: 1; min-width: 0;">
+          <div style="color: #c9d1d9; font-size: 13px; font-weight: 500;">docs: update install guide for EC v3</div>
+          <div style="color: #8b949e; font-size: 11px;">#40 &bull; FirstResponse &bull; 1w ago</div>
+        </div>
+        <div style="flex-shrink: 0; width: 50px;"></div>
+      </div>
+
+      <!-- Issue row 4: has unread internal only -->
+      <div style="padding: 10px 16px; border-bottom: 1px solid #21262d; display: flex; align-items: center; gap: 12px;">
+        <div style="width: 16px; height: 16px; border-radius: 50%; background: #8b949e; flex-shrink: 0;"></div>
+        <div style="flex: 1; min-width: 0;">
+          <div style="color: #c9d1d9; font-size: 13px; font-weight: 500;">fix: session token not refreshing</div>
+          <div style="color: #8b949e; font-size: 11px;">#39 &bull; FirstResponse &bull; 2w ago</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+          <div style="position: relative; display: flex; align-items: center; gap: 3px; background: #1c1917; border: 1px solid #d97706; border-radius: 12px; padding: 2px 8px; font-size: 11px;">
+            <span style="color: #fbbf24;">💬</span>
+            <span style="color: #fbbf24; font-weight: 600;">2</span>
+            <div style="position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background: #f97316; border: 2px solid #0d1117;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">Kanban Card — Comment Badges</div>
+    <div class="mockup-body" style="padding: 16px; background: #0d1117;">
+
+      <!-- Card with unread -->
+      <div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 12px; margin-bottom: 12px; border-left: 3px solid #f85149;">
+        <div style="color: #c9d1d9; font-size: 13px; font-weight: 500; margin-bottom: 6px;">bug: API returns 500 on empty payload</div>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="color: #8b949e; font-size: 11px;">#42 &bull; @kris</div>
+          <div style="position: relative; display: flex; align-items: center; gap: 3px; background: #1c1917; border: 1px solid #d97706; border-radius: 10px; padding: 1px 6px; font-size: 10px;">
+            <span style="color: #fbbf24;">💬</span>
+            <span style="color: #fbbf24; font-weight: 600;">5</span>
+            <div style="position: absolute; top: -2px; right: -2px; width: 7px; height: 7px; border-radius: 50%; background: #f97316; border: 1.5px solid #161b22;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card all read -->
+      <div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 12px; margin-bottom: 12px; border-left: 3px solid #d29922;">
+        <div style="color: #c9d1d9; font-size: 13px; font-weight: 500; margin-bottom: 6px;">feat: add webhook retry logic</div>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="color: #8b949e; font-size: 11px;">#41 &bull; @jenna</div>
+          <div style="display: flex; align-items: center; gap: 3px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 1px 6px; font-size: 10px;">
+            <span style="color: #8b949e;">💬</span>
+            <span style="color: #8b949e;">3</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card no comments -->
+      <div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 12px; margin-bottom: 12px; border-left: 3px solid #3fb950;">
+        <div style="color: #c9d1d9; font-size: 13px; font-weight: 500; margin-bottom: 6px;">docs: update install guide</div>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="color: #8b949e; font-size: 11px;">#40 &bull; @marc</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 20px; padding: 16px; background: #161b22; border: 1px solid #30363d; border-radius: 8px;">
+  <h3 style="margin-top: 0;">Badge States</h3>
+  <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="position: relative; display: inline-flex; align-items: center; gap: 3px; background: #1c1917; border: 1px solid #d97706; border-radius: 12px; padding: 2px 8px; font-size: 12px;">
+        <span style="color: #fbbf24;">💬</span>
+        <span style="color: #fbbf24; font-weight: 600;">5</span>
+        <div style="position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background: #f97316; border: 2px solid #0d1117;"></div>
+      </div>
+      <span style="color: #c9d1d9; font-size: 13px;">Has unread comments (orange dot)</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="display: inline-flex; align-items: center; gap: 3px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 2px 8px; font-size: 12px;">
+        <span style="color: #8b949e;">💬</span>
+        <span style="color: #8b949e;">3</span>
+      </div>
+      <span style="color: #c9d1d9; font-size: 13px;">All read (neutral gray)</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="color: #8b949e; font-size: 13px; padding-left: 4px;">No badge = no comments</span>
+    </div>
+  </div>
+</div>
