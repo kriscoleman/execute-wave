@@ -10,10 +10,10 @@ Molds can be cast directly from the GitHub URL — no separate `mold get` step n
 
 ```bash
 # Install globally (recommended — gives all Gas Town agents access)
-ailloy cast -g kriscoleman/execute-wave
+ailloy cast -g github.com/kriscoleman/execute-wave
 
 # Or install locally to a specific project
-ailloy cast kriscoleman/execute-wave
+ailloy cast github.com/kriscoleman/execute-wave
 ```
 
 The `-g` flag installs to `~/.claude/skills/` (global), making the skill available to all agents (mayor, polecats). Without `-g`, the skill installs to `.claude/skills/` in the current project directory.
